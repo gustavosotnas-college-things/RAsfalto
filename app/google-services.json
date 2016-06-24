@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "74187737777",
+    "firebase_url": "https://rasfalto-d70cd.firebaseio.com",
+    "project_id": "rasfalto-d70cd",
+    "storage_bucket": "rasfalto-d70cd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:74187737777:android:f6d91e230ecaaa09",
+        "android_client_info": {
+          "package_name": "com.example.cintia.rasfalto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "74187737777-2nept5do7tlqhv5cld018t1qgbh0ktqa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDx5c7WnjFjjr45alq8L5WX3iM_a2tcLY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
