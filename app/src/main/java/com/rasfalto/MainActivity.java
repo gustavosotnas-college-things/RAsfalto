@@ -1,4 +1,4 @@
-package com.example.cintia.rasfalto;
+package com.rasfalto;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
