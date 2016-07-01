@@ -39,6 +39,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:background="#a1887f"
             android:text="Entrar"
             android:onClick="login"/>
     </LinearLayout>
@@ -48,6 +50,8 @@
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="#a1887f"
         android:text="Cadastrar-se"
         android:onClick="login"/>
     <TextView
