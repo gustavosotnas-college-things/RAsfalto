@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">RAsfalto</string>
+    <string name="user_name_email">Nome de usuário ou email</string>
+    <string name="password">Senha</string>
+    <string name="login">Entrar</string>
+    <string name="nao_cadastro">Ainda não tem cadastro?</string>
+    <string name="sign_up">Cadastrar-se</string>
 </resources>

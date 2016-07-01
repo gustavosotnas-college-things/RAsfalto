@@ -28,12 +28,12 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nome de usuário ou email"
+            android:hint="@string/user_name_email"
             android:inputType="textEmailAddress"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Senha"
+            android:hint="@string/password"
             android:inputType="textPassword"
             android:layout_marginBottom="8dp"/>
         <Button
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:background="#a1887f"
-            android:text="Entrar"
+            android:text="@string/login"
             android:onClick="login"/>
     </LinearLayout>
     <Button
@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:padding="16dp"
         android:background="#a1887f"
-        android:text="Cadastrar-se"
+        android:text="@string/sign_up"
         android:onClick="login"/>
     <TextView
         android:id="@+id/textView1_activity_main"
@@ -62,5 +62,5 @@
         android:layout_marginBottom="8dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ainda não tem cadastro?"/>
+        android:text="@string/nao_cadastro"/>
 </RelativeLayout>
