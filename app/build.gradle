@@ -16,7 +16,12 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+
+        debug{
+            debuggable true
+        }
     }
+
 }
 
 dependencies {
@@ -25,4 +30,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.2.1'
     compile 'com.google.firebase:firebase-core:9.0.2'
     compile 'com.google.firebase:firebase-auth:9.0.2'
+    compile 'com.firebase:firebase-client-android:2.5.2+'
 }

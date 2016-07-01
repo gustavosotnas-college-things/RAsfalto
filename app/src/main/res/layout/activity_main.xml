@@ -28,20 +28,18 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/user_name_email"
+            android:hint="@string/nomeemailhint"
             android:inputType="textEmailAddress"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/password"
+            android:hint="@string/senha"
             android:inputType="textPassword"
             android:layout_marginBottom="8dp"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:background="#a1887f"
-            android:text="@string/login"
+            android:text="@string/entrar"
             android:onClick="login"/>
     </LinearLayout>
     <Button
@@ -50,10 +48,8 @@
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:background="#a1887f"
-        android:text="@string/sign_up"
-        android:onClick="login"/>
+        android:text="@string/cadastrese"
+        android:onClick="cadastrar"/>
     <TextView
         android:id="@+id/textView1_activity_main"
         android:layout_above="@id/textView2_activity_main"
