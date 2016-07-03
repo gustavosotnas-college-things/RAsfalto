@@ -10,7 +10,7 @@ import com.firebase.client.FirebaseError;
 
 import java.util.Map;
 
-public class CreateAccount extends AppCompatActivity {
+public class CreateAccountActivity extends AppCompatActivity {
 
     private EditText emailinsert;
     private EditText passwordinsert;
