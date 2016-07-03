@@ -54,7 +54,8 @@
         android:id="@+id/buttonCadastre_se"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary" />
+        android:background="@color/colorPrimary"
+        android:onClick="onClick$CreateAccount"/>
 
     <Button
         android:layout_width="match_parent"

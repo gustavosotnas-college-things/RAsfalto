@@ -18,4 +18,10 @@ public class StartActivity extends AppCompatActivity {
         Intent loginActivity = new Intent(this, LoginActivity.class);
         startActivity(loginActivity);
     }
+
+    public void onClick$CreateAccount(View view){
+
+        Intent cadastroActivity = new Intent(this, CreateAccount.class);
+        startActivity(cadastroActivity);
+    }
 }

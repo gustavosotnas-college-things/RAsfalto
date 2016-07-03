@@ -18,10 +18,4 @@ public class LoginActivity extends AppCompatActivity {
         Intent loginActivity = new Intent(this, RAsfaltoActivity.class);
         startActivity(loginActivity);
     }
-
-    public void cadastrar(View view){
-
-        Intent cadastroActivity = new Intent(this, CreateAccount.class);
-        startActivity(cadastroActivity);
-    }
 }
