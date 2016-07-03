@@ -5,4 +5,6 @@
     <string name="login">Entrar</string>
     <string name="nao_cadastro">Ainda não tem cadastro?</string>
     <string name="sign_up">Cadastrar-se</string>
+    <string name="frase_de_efeito_1">Asfalto ruim deve ser consertado.</string>
+    <string name="frase_de_efeito_2">RAsfalto colabora com a população da cidade de Goiânia com a colaboração da população informações de localização e detalhes dos locais onde o asfalto precisa de reparos.</string>
 </resources>
