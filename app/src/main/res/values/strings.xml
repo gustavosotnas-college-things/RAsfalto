@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">RAsfalto</string>
-    <string name="cadastrese">Cadastrar-se</string>
-    <string name="entrar">entrar</string>
-    <string name="senha">Senha</string>
-    <string name="nomeemailhint">Nome de usuário ou email</string>
-    <string name="Cadastrar">Cadastrar</string>
+    <string name="user_name_email">Nome de usuário ou email</string>
+    <string name="password">Senha</string>
+    <string name="login">Entrar</string>
+    <string name="nao_cadastro">Ainda não tem cadastro?</string>
+    <string name="sign_up">Cadastrar-se</string>
+    <string name="frase_de_efeito_1">Asfalto ruim deve ser consertado.</string>
+    <string name="frase_de_efeito_2">RAsfalto colabora com a população da cidade de Goiânia com a colaboração da população informações de localização e detalhes dos locais onde o asfalto precisa de reparos.</string>
 </resources>
