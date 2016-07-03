@@ -17,7 +17,7 @@
             android:id="@+id/emailcadastro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/nomeemailhint"
+            android:hint="@string/user_name_email"
             android:inputType="textEmailAddress" />
 
         <EditText
@@ -25,14 +25,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:hint="@string/senha"
+            android:hint="@string/password"
             android:inputType="textPassword" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="RealizarCadastro"
-            android:text="@string/Cadastrar" />
+            android:text="@string/sign_up" />
     </LinearLayout>
 
 </RelativeLayout>
