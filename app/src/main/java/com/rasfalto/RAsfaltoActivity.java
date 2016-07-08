@@ -1,7 +1,6 @@
 package com.rasfalto;
 
 import android.content.Intent;
-import android.location.Location;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
@@ -22,10 +21,6 @@ public class RAsfaltoActivity extends AppCompatActivity
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
-        Location location1 = new Location("");
-        Location location2 = new Location("");
-        long distancia = location1.distanceTo(location2);
 
         mMap.moveCamera(
                 CameraUpdateFactory.newLatLngZoom(
