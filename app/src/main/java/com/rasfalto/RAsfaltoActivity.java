@@ -1,5 +1,6 @@
 package com.rasfalto;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
@@ -36,5 +37,10 @@ public class RAsfaltoActivity extends AppCompatActivity
                 .title("INF"))
                 .snippet("Meu lugar preferido")
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+    }
+
+    @Override
+    public void onInfoWindowClick (Marker marker) {
+        Intent intent = new Intent(this, SecondActivity.class);
     }
 }
