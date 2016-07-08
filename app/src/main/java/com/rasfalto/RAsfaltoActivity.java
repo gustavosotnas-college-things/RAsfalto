@@ -22,10 +22,9 @@ public class RAsfaltoActivity extends AppCompatActivity
         mMap = googleMap;
 
         mMap.moveCamera(
-                CameraUpdateFactory.newLatLng(
-                        new LatLng(-16.6033508, -49.266545)
-                )
-        )
+                CameraUpdateFactory.newLatLngZoom(
+                        new LatLng(-16.6033508, -49.266545),15
+                ));
             nMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN); // economiza dados de celular
         // if (...Permission_GRANTED...
             // return
