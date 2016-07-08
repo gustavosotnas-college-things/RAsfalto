@@ -19,7 +19,7 @@
 
     <meta-data
         android:name="com.google.android.geo.API_KEY"
-        android:value="YOUR_API_KEY"/> <!-- Chave apenas de 1 PC -->
+        android:value="AIzaSyDLyzaOrbFUW8PFPysmSHsQXaeBSXaWiCY"/> <!-- Chave apenas de 1 PC -->
 
     <application
         android:allowBackup="true"
