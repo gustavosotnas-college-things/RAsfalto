@@ -33,7 +33,8 @@ public class RAsfaltoActivity extends AppCompatActivity
 
         map.addMarker(new MarkerOptions()
                 .position(new LatLng(-16.6033508, -49.266545))
-                .title("Meu lugar preferido"))
+                .title("INF"))
+                .snippet("Meu lugar preferido")
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
     }
 }
