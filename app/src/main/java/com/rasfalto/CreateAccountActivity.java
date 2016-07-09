@@ -84,14 +84,16 @@ public class CreateAccountActivity extends AppCompatActivity {
 
     public void Create(String email, String password) {
 
-        mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
 
                 Log.d("sucesso", "createUserWithEmail:onComplete:" + task.isSuccessful());
 
-                if (!task.isSuccessful()){
+                if (!task.isSuccessful()) {
                     Toast.makeText(CreateAccountActivity.this, "Autenticação Falhou", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(CreateAccountActivity.this, "Autenticação realizada com sucesso", Toast.LENGTH_SHORT).show();
                 }
             }
         });

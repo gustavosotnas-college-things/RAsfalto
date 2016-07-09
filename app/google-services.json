@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:74187737777:android:f6d91e230ecaaa09",
+        "mobilesdk_app_id": "1:74187737777:android:ca4bd9f632fd61df",
         "android_client_info": {
-          "package_name": "com.example.cintia.rasfalto"
+          "package_name": "com.rasfalto"
         }
       },
       "oauth_client": [
