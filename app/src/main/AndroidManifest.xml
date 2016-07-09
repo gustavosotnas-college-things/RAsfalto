@@ -21,6 +21,7 @@
         <activity android:name=".LoginActivity" android:theme="@style/Theme.AppCompat.NoActionBar"/>
         <activity android:name=".CreateAccountActivity" />
         <activity android:name=".RAsfaltoActivity" />
+        <activity android:name=".ChooseLoginActivity" />
     </application>
 
 </manifest>

@@ -75,10 +75,10 @@ public class CreateAccountActivity extends AppCompatActivity {
         mEmail = emailinsert.getText().toString();
         mPass = passwordinsert.getText().toString();
 
-        Create(mEmail, mPass);
+        create(mEmail, mPass, mAuth);
     }
 
-    public void Create(String email, String password) {
+    public void create(String email, String password, FirebaseAuth mAuth) {
 
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
@@ -88,6 +88,7 @@ public class CreateAccountActivity extends AppCompatActivity {
 
                 if (!task.isSuccessful()) {
                     Toast.makeText(CreateAccountActivity.this, "Autenticação Falhou", Toast.LENGTH_SHORT).show();
+
                 } else {
                     Toast.makeText(CreateAccountActivity.this, "Autenticação realizada com sucesso", Toast.LENGTH_SHORT).show();
                 }
@@ -96,5 +97,6 @@ public class CreateAccountActivity extends AppCompatActivity {
 
 
     }
+
 
 }

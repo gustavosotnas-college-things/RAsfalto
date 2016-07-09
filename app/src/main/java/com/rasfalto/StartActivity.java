@@ -21,7 +21,7 @@ public class StartActivity extends AppCompatActivity {
 
     public void onClick$CreateAccount(View view){
 
-        Intent cadastroActivity = new Intent(this, CreateAccountActivity.class);
+        Intent cadastroActivity = new Intent(this, ChooseLoginActivity.class);
         startActivity(cadastroActivity);
     }
 }
