@@ -70,7 +70,7 @@ public class CreateAccountActivity extends AppCompatActivity {
         passwordinsert = (EditText) findViewById(R.id.senhacadastro);
     }
 
-    public void RealizarCadastro(View view) {
+    public void onClick$signUp(View view) {
 
         mEmail = emailinsert.getText().toString();
         mPass = passwordinsert.getText().toString();
