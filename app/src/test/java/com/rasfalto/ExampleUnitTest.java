@@ -1,4 +1,4 @@
-package com.example.cintia.rasfalto;
+package com.rasfalto;
 
 import org.junit.Test;
 
