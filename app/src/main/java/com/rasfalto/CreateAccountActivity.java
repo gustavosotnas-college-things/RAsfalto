@@ -78,7 +78,7 @@ public class CreateAccountActivity extends AppCompatActivity {
         create(mEmail, mPass, mAuth);
     }
 
-    public void create(String email, String password, FirebaseAuth mAuth) {
+    private void create(String email, String password, FirebaseAuth mAuth) {
 
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
@@ -87,10 +87,10 @@ public class CreateAccountActivity extends AppCompatActivity {
                 Log.d("sucesso", "createUserWithEmail:onComplete:" + task.isSuccessful());
 
                 if (!task.isSuccessful()) {
-                    Toast.makeText(CreateAccountActivity.this, "Autenticação Falhou", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CreateAccountActivity.this, R.string.toast_new_account_failure, Toast.LENGTH_SHORT).show();
 
                 } else {
-                    Toast.makeText(CreateAccountActivity.this, "Autenticação realizada com sucesso", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CreateAccountActivity.this, R.string.toast_new_account_success, Toast.LENGTH_SHORT).show();
                 }
             }
         });
