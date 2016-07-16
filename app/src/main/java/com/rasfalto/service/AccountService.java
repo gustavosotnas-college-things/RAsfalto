@@ -9,7 +9,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.rasfalto.CreateAccountActivity;
 
-public final class CreateAccountService {
+public final class AccountService {
 
     private static boolean result;
 
