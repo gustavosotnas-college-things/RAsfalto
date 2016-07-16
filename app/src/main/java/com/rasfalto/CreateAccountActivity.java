@@ -8,29 +8,20 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.rasfalto.service.AccountService;
 
 public class CreateAccountActivity extends AppCompatActivity {
 
-    private EditText emailinsert;
-    private EditText passwordinsert;
-
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener listener;
-
-    private String mEmail, mPass;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_account);
-
-        inicializa();
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -64,39 +55,20 @@ public class CreateAccountActivity extends AppCompatActivity {
         }
     }
 
-    public void inicializa() {
+    public void onClick$signUp(View view) {
 
-        emailinsert = (EditText) findViewById(R.id.emailcadastro);
-        passwordinsert = (EditText) findViewById(R.id.senhacadastro);
+        EditText etEmail = (EditText) findViewById(R.id.emailcadastro);
+        EditText etPassword = (EditText) findViewById(R.id.senhacadastro);
+        String mEmail = etEmail.getText().toString();
+        String mPass = etPassword.getText().toString();
+
+        boolean success = AccountService.createAccount(mEmail, mPass, mAuth, CreateAccountActivity.this);
+
+        if (success) {
+            Toast.makeText(this, R.string.toast_new_account_success, Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Toast.makeText(this, R.string.toast_new_account_failure, Toast.LENGTH_SHORT).show();
+        }
     }
-
-    public void RealizarCadastro(View view) {
-
-        mEmail = emailinsert.getText().toString();
-        mPass = passwordinsert.getText().toString();
-
-        create(mEmail, mPass, mAuth);
-    }
-
-    public void create(String email, String password, FirebaseAuth mAuth) {
-
-        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-
-                Log.d("sucesso", "createUserWithEmail:onComplete:" + task.isSuccessful());
-
-                if (!task.isSuccessful()) {
-                    Toast.makeText(CreateAccountActivity.this, "Autenticação Falhou", Toast.LENGTH_SHORT).show();
-
-                } else {
-                    Toast.makeText(CreateAccountActivity.this, "Autenticação realizada com sucesso", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-
-    }
-
-
 }

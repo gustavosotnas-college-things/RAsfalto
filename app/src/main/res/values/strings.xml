@@ -6,5 +6,7 @@
     <string name="nao_cadastro">Ainda não tem cadastro?</string>
     <string name="sign_up">Cadastrar-se</string>
     <string name="frase_de_efeito_1">Asfalto ruim deve ser consertado.</string>
-    <string name="frase_de_efeito_2">RAsfalto colabora com a população da cidade de Goiânia com a colaboração da população informações de localização e detalhes dos locais onde o asfalto precisa de reparos.</string>
+    <string name="frase_de_efeito_2">RAsfalto (juntamente com as colaborações da população da cidade de Goiânia) auxilia motoristas da cidade provendo informações detalhadas dos locais onde o asfalto precisa de reparos.</string>
+    <string name="toast_new_account_success">Conta criada com sucesso</string>
+    <string name="toast_new_account_failure">Falha ao criar a conta.</string>
 </resources>
