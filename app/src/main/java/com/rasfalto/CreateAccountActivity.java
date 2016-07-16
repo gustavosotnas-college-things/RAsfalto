@@ -86,11 +86,10 @@ public class CreateAccountActivity extends AppCompatActivity {
 
                 Log.d("sucesso", "createUserWithEmail:onComplete:" + task.isSuccessful());
 
-                if (!task.isSuccessful()) {
-                    Toast.makeText(CreateAccountActivity.this, R.string.toast_new_account_failure, Toast.LENGTH_SHORT).show();
-
-                } else {
+                if (task.isSuccessful()) {
                     Toast.makeText(CreateAccountActivity.this, R.string.toast_new_account_success, Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(CreateAccountActivity.this, R.string.toast_new_account_failure, Toast.LENGTH_SHORT).show();
                 }
             }
         });
