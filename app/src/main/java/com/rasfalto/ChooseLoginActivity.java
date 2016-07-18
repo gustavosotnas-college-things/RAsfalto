@@ -19,4 +19,10 @@ public class ChooseLoginActivity extends AppCompatActivity {
         Intent criarConta = new Intent(this, CreateAccountActivity.class);
         startActivity(criarConta);
     }
+
+    public void onClick$newAccountGoogle (View view){
+
+        Intent criarContaGoogle = new Intent(this, CreateAccountGoogleActivity.class);
+        startActivity(criarContaGoogle);
+    }
 }
