@@ -1,5 +1,6 @@
 package com.rasfalto;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -66,6 +67,10 @@ public class CreateAccountActivity extends AppCompatActivity {
 
         if (success) {
             Toast.makeText(this, R.string.toast_new_account_success, Toast.LENGTH_SHORT).show();
+
+            Intent voltarATelaInicial = new Intent(this, StartActivity.class);
+            startActivity(voltarATelaInicial);
+            finish();
         }
         else {
             Toast.makeText(this, R.string.toast_new_account_failure, Toast.LENGTH_SHORT).show();
