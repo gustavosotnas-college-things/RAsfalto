@@ -40,12 +40,12 @@ public class ChooseLoginActivity extends AppCompatActivity {
                 .requestEmail()
                 .build();
 
-        mGoogleApiClient = new GoogleApiClient.Builder(this)
+        /*mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .enableAutoManage(this, (GoogleApiClient.OnConnectionFailedListener) this )
                 .addApi(Auth.GOOGLE_SIGN_IN_API, options)
                 .build();
 
-        auth = FirebaseAuth.getInstance();
+        setAuth(FirebaseAuth.getInstance());
 
         authListener = new FirebaseAuth.AuthStateListener() {
 
@@ -61,21 +61,7 @@ public class ChooseLoginActivity extends AppCompatActivity {
                     Log.d("autenticacao", "onAuthStateChanged:signed_out");
                 }
             }
-        };
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        auth.addAuthStateListener(authListener);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        if(authListener != null){
-            auth.removeAuthStateListener(authListener);
-        }
+        };*/
     }
 
     public void onClick$newAccount(View view) {
@@ -84,11 +70,25 @@ public class ChooseLoginActivity extends AppCompatActivity {
         startActivity(criarConta);
     }
 
+   /* @Override
+    public void onStart() {
+        super.onStart();
+        getAuth().addAuthStateListener(authListener);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if(authListener != null){
+            getAuth().removeAuthStateListener(authListener);
+        }
+    }
+
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
         Log.d("autenticacao", "firebaseAuthWithGoogle:" + acct.getId());
 
         AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
-        auth.signInWithCredential(credential)
+        getAuth().signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -116,4 +116,8 @@ public class ChooseLoginActivity extends AppCompatActivity {
     public void setAuth(FirebaseAuth auth) {
         this.auth = auth;
     }
+
+    public FirebaseAuth getAuth(){
+        return auth;
+    }*/
 }

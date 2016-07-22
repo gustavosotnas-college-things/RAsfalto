@@ -1,21 +1,78 @@
 package com.rasfalto;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.rasfalto.service.AccountService;
 
 public class LoginActivity extends AppCompatActivity {
+
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener listener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mAuth = FirebaseAuth.getInstance();
+
+        listener = new FirebaseAuth.AuthStateListener() {
+
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null) {
+                    // User is signed in
+                    Log.d("autenticacao", "onAuthStateChanged:signed_in:" + user.getUid());
+                } else {
+                    // User is signed out
+                    Log.d("autenticacao", "onAuthStateChanged:signed_out");
+                }
+            }
+        };
     }
 
-    public void login(View view){
+    @Override
+    public void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(listener);
+    }
 
-        Intent loginActivity = new Intent(this, RAsfaltoActivity.class);
-        startActivity(loginActivity);
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (listener != null) {
+            mAuth.removeAuthStateListener(listener);
+        }
+    }
+
+    public void onClick$signIn(View view) {
+
+        EditText etEmail = (EditText) findViewById(R.id.emailLogin);
+        EditText etPassword = (EditText) findViewById(R.id.passwordLogin);
+        String mEmail = etEmail.getText().toString();
+        String mPass = etPassword.getText().toString();
+
+        boolean success = AccountService.loginAccount(mEmail, mPass, mAuth, LoginActivity.this);
+
+        if (success) {
+            Toast.makeText(this, R.string.account_login_success, Toast.LENGTH_SHORT).show();
+            Intent loginActivity = new Intent(this, RAsfaltoActivity.class);
+            startActivity(loginActivity);
+        }
+        else {
+            Toast.makeText(this, R.string.account_login_failure, Toast.LENGTH_SHORT).show();
+            Intent criarConta = new Intent(this, CreateAccountActivity.class);
+            startActivity(criarConta);
+        }
     }
 }
