@@ -1,4 +1,4 @@
-package com.rasfalto.service;
+package com.rasfalto.controller;
 
 import android.support.annotation.NonNull;
 import android.util.Log;
@@ -17,7 +17,7 @@ import com.rasfalto.LoginActivity;
  * @author gustavosotnas
  * @author RenanOfugi
  */
-public final class AccountService {
+public final class AccountController {
 
     private static boolean resultCreate = false;
     private static boolean resultLogin = false;
