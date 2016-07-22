@@ -3,6 +3,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/backgroundAsfalto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/buraco_asfalto_blur_light_semitransparent_brown"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:text="@string/sign_up_type_text"
+        android:textSize="@dimen/abc_text_size_display_1_material"
+        android:fontFamily="sans-serif-light"
+        android:layout_margin="@dimen/activity_vertical_margin"/>
+
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
@@ -13,32 +32,25 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/loginPassword"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nova Conta"
-                android:layout_marginBottom="12dp"
-                android:onClick="onClick$newAccount"/>
+            android:orientation="vertical"
+            android:gravity="center">
 
             <com.google.android.gms.common.SignInButton
                 android:id="@+id/sign_in_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"/>
+
+            <Button
+                android:id="@+id/sign_up_manual"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="@string/sign_up_button_text"
+                android:onClick="onClick$newAccount"
+                android:padding="16dp"/>
 
         </LinearLayout>
 
     </RelativeLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/relativeLayout"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="56dp"
-        android:text="Tipo de login"
-        android:textSize="30sp" />
 
 </RelativeLayout>
