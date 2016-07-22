@@ -20,13 +20,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Nova Conta"
+                android:layout_marginBottom="12dp"
                 android:onClick="onClick$newAccount"/>
 
-            <Button
+            <com.google.android.gms.common.SignInButton
+                android:id="@+id/sign_in_button"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Google"
-                android:onClick="onClick$newAccountGoogle"/>
+                android:layout_height="wrap_content" />
+
         </LinearLayout>
 
     </RelativeLayout>
