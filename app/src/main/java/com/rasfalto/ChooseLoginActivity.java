@@ -6,21 +6,11 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
-import com.firebase.client.core.Tag;
-import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.auth.api.signin.internal.SignInHubActivity;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.GoogleAuthProvider;
 
 public class ChooseLoginActivity extends AppCompatActivity {
 
@@ -44,8 +34,8 @@ public class ChooseLoginActivity extends AppCompatActivity {
 //                .enableAutoManage(this, (GoogleApiClient.OnConnectionFailedListener) this )
 //                .addApi(Auth.GOOGLE_SIGN_IN_API, options)
 //                .build();
-
-        setAuth(FirebaseAuth.getInstance());
+//
+//        setAuth(FirebaseAuth.getInstance());
 
         authListener = new FirebaseAuth.AuthStateListener() {
 
@@ -61,7 +51,7 @@ public class ChooseLoginActivity extends AppCompatActivity {
                     Log.d("autenticacao", "onAuthStateChanged:signed_out");
                 }
             }
-        };*/
+        };
     }
 
     public void onClick$newAccount(View view) {
