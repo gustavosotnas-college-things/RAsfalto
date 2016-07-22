@@ -11,11 +11,13 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.rasfalto.controller.AccountController;
 
 public class CreateAccountActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener listener;
+    boolean success = true;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -62,8 +64,7 @@ public class CreateAccountActivity extends AppCompatActivity {
         String mEmail = etEmail.getText().toString();
         String mPass = etPassword.getText().toString();
 
-        //boolean success = AccountService.createAccount(mEmail, mPass, mAuth, CreateAccountActivity.this);
-        boolean success = true;
+        AccountController.createAccount(mEmail, mPass, mAuth, CreateAccountActivity.this);
 
         if (success) {
             Toast.makeText(this, R.string.toast_new_account_success, Toast.LENGTH_SHORT).show();

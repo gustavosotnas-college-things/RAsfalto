@@ -9,6 +9,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.rasfalto.CreateAccountActivity;
 import com.rasfalto.LoginActivity;
+import com.rasfalto.service.AccountService;
 
 /**
  * Classe que reúne todas as operações de baixo nível relacionadas à gerência
@@ -21,6 +22,10 @@ public final class AccountController {
 
     private static boolean resultCreate = false;
     private static boolean resultLogin = false;
+
+    public static void setResultCreate(boolean resultCreate) {
+        AccountController.resultCreate = resultCreate;
+    }
 
     /**
      * Função que uma nova conta de usuário no RAsfalto, se comunicando com o
@@ -35,15 +40,7 @@ public final class AccountController {
      */
     public static boolean createAccount(String email, String password, FirebaseAuth mAuth, final CreateAccountActivity targetActivity) {
 
-        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(targetActivity, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-
-                Log.d("sucesso", "createUserWithEmail:onComplete:" + task.isSuccessful());
-
-                resultCreate = task.isSuccessful(); // retorna true se a conta foi criada com sucesso, false caso contrário.
-            }
-        });
+        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(targetActivity, new AccountService());
         return resultCreate;
     }
 
