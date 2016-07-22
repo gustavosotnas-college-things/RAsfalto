@@ -8,11 +8,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import com.firebase.client.core.Tag;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.auth.api.signin.internal.SignInHubActivity;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -40,10 +38,10 @@ public class ChooseLoginActivity extends AppCompatActivity {
                 .requestEmail()
                 .build();
 
-        mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .enableAutoManage(this, (GoogleApiClient.OnConnectionFailedListener) this )
-                .addApi(Auth.GOOGLE_SIGN_IN_API, options)
-                .build();
+//        mGoogleApiClient = new GoogleApiClient.Builder(this)
+//                .enableAutoManage(this, (GoogleApiClient.OnConnectionFailedListener) this )
+//                .addApi(Auth.GOOGLE_SIGN_IN_API, options)
+//                .build();
 
         auth = FirebaseAuth.getInstance();
 
