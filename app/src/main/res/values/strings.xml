@@ -12,4 +12,6 @@
     <string name="create_account_text">Criar nova conta</string>
     <string name="toast_new_account_success">Conta criada com sucesso</string>
     <string name="toast_new_account_failure">Falha ao criar a conta.</string>
+    <string name="account_login_success">Autenticação valida</string>
+    <string name="account_login_failure">Usuário inexistente</string>
 </resources>

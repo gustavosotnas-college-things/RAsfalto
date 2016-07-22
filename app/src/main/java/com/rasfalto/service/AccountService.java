@@ -8,6 +8,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.rasfalto.CreateAccountActivity;
+import com.rasfalto.LoginActivity;
 
 /**
  * Classe que reúne todas as operações de baixo nível relacionadas à gerência
@@ -18,18 +19,19 @@ import com.rasfalto.CreateAccountActivity;
  */
 public final class AccountService {
 
-    private static boolean result;
+    private static boolean resultCreate = false;
+    private static boolean resultLogin = false;
 
     /**
      * Função que uma nova conta de usuário no RAsfalto, se comunicando com o
      * Firebase para isso.
      *
-     * @param email endereço de email do novo usuário.
-     * @param password a senha do novo usuário.
-     * @param mAuth o objeto de autenticação e manipulação do repositório no Firebase.
+     * @param email          endereço de email do novo usuário.
+     * @param password       a senha do novo usuário.
+     * @param mAuth          o objeto de autenticação e manipulação do repositório no Firebase.
      * @param targetActivity a Activity-alvo da operação.
      * @return {@code true} caso a conta tenha sido criada com sucesso,
-     *         {@code false} caso contrário.
+     * {@code false} caso contrário.
      */
     public static boolean createAccount(String email, String password, FirebaseAuth mAuth, final CreateAccountActivity targetActivity) {
 
@@ -39,9 +41,25 @@ public final class AccountService {
 
                 Log.d("sucesso", "createUserWithEmail:onComplete:" + task.isSuccessful());
 
-                result = task.isSuccessful(); // retorna true se a conta foi criada com sucesso, false caso contrário.
+                resultCreate = task.isSuccessful(); // retorna true se a conta foi criada com sucesso, false caso contrário.
             }
         });
-        return result;
+        return resultCreate;
+    }
+
+    public static boolean loginAccount(String email, String password, FirebaseAuth mAuth, final LoginActivity targetActivity) {
+
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(targetActivity, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+
+                        Log.d("sucesso", "signInWithEmail:onComplete:" + task.isSuccessful());
+
+                        resultLogin = task.isSuccessful();
+                    }
+                });
+
+        return resultLogin;
     }
 }
