@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="8dp"
+    tools:context="com.rasfalto.BuracoActivity">
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/title">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+
+                    android:text="Buraco feio na avenida Independência"
+                    android:textSize="@dimen/abc_text_size_display_1_material"
+                    android:fontFamily="sans-serif-light"
+                    android:layout_margin="@dimen/activity_vertical_margin"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/content"
+                android:layout_below="@id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:paddingTop="24dp"
+                android:paddingRight="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Av. Independência, 896, Setor Marechal Rondon" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="É uma vergonha esse asfalto da prefeitura de Goiânia. O asfalto parece casca de ovo e o buraco no meio da pista da esquerda ta fazendo os carros terem que ir pra pista da direita para desviar do buraco e não terem seus amortecedores estragados!"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="64dp">
+                    <ImageView
+                        android:id="@+id/author_avatar"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/avatar"/>
+
+                    <TextView
+                        android:id="@+id/author_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Djalma Nunes"
+                        android:textStyle="bold"
+                        android:layout_toLeftOf="@id/author_avatar"/>
+
+                    <TextView
+                        android:id="@+id/date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Segunda, 13 de junho de 2016"
+                        android:textStyle="bold"
+                        android:layout_toLeftOf="@id/author_avatar"
+                        android:layout_below="@id/author_name"/>
+                    <TextView
+                        android:id="@+id/reclamacao_feita_por"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reclamação feita por "
+                        android:layout_toLeftOf="@id/author_name"
+                        android:layout_above="@id/date"/>
+                </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Comentários"
+                    android:textSize="24sp"/>
+                <RelativeLayout
+                    android:layout_marginTop="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/avatar_1"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/avatar"/>
+                    <TextView
+                        android:id="@+id/comment_title_1"
+                        android:layout_toRightOf="@id/avatar_1"
+                        android:layout_marginLeft="16dp"
+                        android:textStyle="bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Estraguei o amortecedor nesse buraco."/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/avatar_1"
+                        android:layout_below="@id/comment_title_1"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Tive que pagar R$400,00 para comprar novos amortecedores para o meu carro. Seria bom se a prefeitura pudesse pagar pra mim."/>
+
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
