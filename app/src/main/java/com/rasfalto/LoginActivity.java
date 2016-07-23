@@ -71,8 +71,8 @@ public class LoginActivity extends AppCompatActivity {
         }
         else {
             Toast.makeText(this, R.string.account_login_failure, Toast.LENGTH_SHORT).show();
-            Intent criarConta = new Intent(this, CreateAccountActivity.class);
-            startActivity(criarConta);
+            Intent voltaParaTelaInicial = new Intent(this, StartActivity.class);
+            startActivity(voltaParaTelaInicial);
         }
     }
 }
