@@ -9,12 +9,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="<<mapa fica aqui>>"
+        android:text="(mapa fica aqui)"
         android:layout_marginBottom="32dp"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ver detalhes"
         android:layout_gravity="center_horizontal"
-        android:onClick=""/>
+        android:onClick="onClick$viewBuraco"/>
 </LinearLayout>
