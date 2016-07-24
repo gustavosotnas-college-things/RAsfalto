@@ -77,7 +77,7 @@
             android:textSize="@dimen/abc_text_size_medium_material"
             android:textStyle="italic"/>
 
-        <LinearLayout
+        <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -95,7 +95,7 @@
                 android:text="@string/gender_female"
                 android:textSize="@dimen/abc_text_size_menu_material"
                 android:textStyle="italic"/>
-        </LinearLayout>
+        </RadioGroup>
 
         <TextView
             android:layout_marginTop="16dp"
