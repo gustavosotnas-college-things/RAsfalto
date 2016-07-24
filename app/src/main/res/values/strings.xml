@@ -7,6 +7,10 @@
     <string name="user_email">Endereço de e-mail</string>
     <string name="user_password">Senha de 6+ caracteres</string>
     <string name="user_phone">Número de telefone</string>
+    <string name="user_gender">Sexo</string>
+    <string name="gender_male">Masculino</string>
+    <string name="gender_female">Feminino</string>
+    <string name="sign_up_obs">* campos em itálico não são obrigatórios.</string>
     <string name="login">Entrar</string>
     <string name="nao_cadastro">Ainda não tem cadastro?</string>
     <string name="sign_up">Cadastrar-se</string>
