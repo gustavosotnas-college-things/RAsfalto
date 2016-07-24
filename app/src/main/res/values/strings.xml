@@ -2,8 +2,11 @@
     <string name="app_name">RAsfalto</string>
     <string name="frase_de_efeito_1">Asfalto ruim deve ser consertado.</string>
     <string name="frase_de_efeito_2">RAsfalto (juntamente com as colaborações da população da cidade de Goiânia) auxilia motoristas da cidade provendo informações detalhadas dos locais onde o asfalto precisa de reparos.</string>
+    <string name="user_name">Nome completo</string>
+    <string name="user_birthdate">Data de nascimento</string>
     <string name="user_email">Endereço de e-mail</string>
     <string name="password">Senha</string>
+    <string name="user_phone">Número de telefone</string>
     <string name="login">Entrar</string>
     <string name="nao_cadastro">Ainda não tem cadastro?</string>
     <string name="sign_up">Cadastrar-se</string>
