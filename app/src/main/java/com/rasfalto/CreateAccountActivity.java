@@ -59,8 +59,8 @@ public class CreateAccountActivity extends AppCompatActivity {
 
     public void onClick$signUp(View view) {
 
-        EditText etEmail = (EditText) findViewById(R.id.emailcadastro);
-        EditText etPassword = (EditText) findViewById(R.id.senhacadastro);
+        EditText etEmail = (EditText) findViewById(R.id.email_cadastro);
+        EditText etPassword = (EditText) findViewById(R.id.senha_cadastro);
         String mEmail = etEmail.getText().toString();
         String mPass = etPassword.getText().toString();
 

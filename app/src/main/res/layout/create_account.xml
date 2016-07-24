@@ -33,21 +33,21 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/nomecadastro"
+            android:id="@+id/nome_cadastro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/user_name"
             android:inputType="textEmailAddress" />
 
         <EditText
-            android:id="@+id/emailcadastro"
+            android:id="@+id/email_cadastro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/user_email"
             android:inputType="textEmailAddress" />
 
         <EditText
-            android:id="@+id/senhacadastro"
+            android:id="@+id/senha_cadastro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/user_password"
@@ -55,7 +55,7 @@
             android:fontFamily="sans-serif"/>
 
         <EditText
-            android:id="@+id/datanasccadastro"
+            android:id="@+id/data_nasc_cadastro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/user_birthdate"
@@ -63,7 +63,7 @@
             android:textStyle="italic"/>
 
         <EditText
-            android:id="@+id/telefonecadastro"
+            android:id="@+id/telefone_cadastro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/user_phone"
