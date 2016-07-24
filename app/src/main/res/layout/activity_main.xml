@@ -45,7 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:hint="@string/password"
+            android:hint="@string/user_password"
             android:inputType="textPassword" />
 
         <Button

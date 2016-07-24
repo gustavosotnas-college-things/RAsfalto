@@ -5,7 +5,7 @@
     <string name="user_name">Nome completo</string>
     <string name="user_birthdate">Data de nascimento</string>
     <string name="user_email">Endereço de e-mail</string>
-    <string name="password">Senha</string>
+    <string name="user_password">Senha de 6+ caracteres</string>
     <string name="user_phone">Número de telefone</string>
     <string name="login">Entrar</string>
     <string name="nao_cadastro">Ainda não tem cadastro?</string>
