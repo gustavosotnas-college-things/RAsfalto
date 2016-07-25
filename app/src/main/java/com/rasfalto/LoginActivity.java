@@ -62,17 +62,28 @@ public class LoginActivity extends AppCompatActivity {
         String mEmail = etEmail.getText().toString();
         String mPass = etPassword.getText().toString();
 
-        boolean success = AccountController.loginAccount(mEmail, mPass, mAuth, LoginActivity.this);
+        if(isLoginValid(mEmail, mPass)){
 
-        if (success) {
-            Toast.makeText(this, R.string.account_login_success, Toast.LENGTH_SHORT).show();
-            Intent loginActivity = new Intent(this, RAsfaltoActivity.class);
-            startActivity(loginActivity);
+            boolean success = AccountController.loginAccount(mEmail, mPass, mAuth, LoginActivity.this);
+
+            if (success) {
+                Toast.makeText(this, R.string.account_login_success, Toast.LENGTH_SHORT).show();
+                Intent loginActivity = new Intent(this, RAsfaltoActivity.class);
+                startActivity(loginActivity);
+            }
+            else {
+                Toast.makeText(this, R.string.account_login_failure, Toast.LENGTH_SHORT).show();
+                Intent voltaParaTelaInicial = new Intent(this, StartActivity.class);
+                startActivity(voltaParaTelaInicial);
+            }
+
         }
         else {
-            Toast.makeText(this, R.string.account_login_failure, Toast.LENGTH_SHORT).show();
-            Intent voltaParaTelaInicial = new Intent(this, StartActivity.class);
-            startActivity(voltaParaTelaInicial);
+            Toast.makeText(this, R.string.account_login_empty, Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private boolean isLoginValid(String email, String password) {
+        return ((email != "")||(email != null))||((password != "")||(password != null));
     }
 }

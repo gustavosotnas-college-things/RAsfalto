@@ -22,4 +22,5 @@
     <string name="toast_new_account_failure">Falha ao criar a conta.</string>
     <string name="account_login_success">Autenticação valida</string>
     <string name="account_login_failure">Usuário inexistente</string>
+    <string name="account_login_empty">Preencha os campos para continuar.</string>
 </resources>
