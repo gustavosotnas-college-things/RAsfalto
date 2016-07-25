@@ -24,4 +24,10 @@
         android:layout_height="2dp"
         android:background="@color/colorAccent"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ver detalhes"
+        android:layout_gravity="center_horizontal"
+        android:onClick="onClick$viewBuraco"/>
 </LinearLayout>
