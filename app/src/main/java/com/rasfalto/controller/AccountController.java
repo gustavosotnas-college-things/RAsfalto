@@ -1,15 +1,10 @@
 package com.rasfalto.controller;
 
-import android.support.annotation.NonNull;
-import android.util.Log;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.rasfalto.CreateAccountActivity;
 import com.rasfalto.LoginActivity;
 import com.rasfalto.service.AccountService;
+import com.rasfalto.service.LoginService;
 
 /**
  * Classe que reúne todas as operações de baixo nível relacionadas à gerência
@@ -25,6 +20,10 @@ public final class AccountController {
 
     public static void setResultCreate(boolean resultCreate) {
         AccountController.resultCreate = resultCreate;
+    }
+
+    public static void setResultLogin(boolean resultLogin) {
+        AccountController.resultLogin = resultLogin;
     }
 
     /**
@@ -46,16 +45,7 @@ public final class AccountController {
 
     public static boolean loginAccount(String email, String password, FirebaseAuth mAuth, final LoginActivity targetActivity) {
 
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(targetActivity, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-
-                        Log.d("sucesso", "signInWithEmail:onComplete:" + task.isSuccessful());
-
-                        resultLogin = task.isSuccessful();
-                    }
-                });
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(targetActivity, new LoginService());
 
         return resultLogin;
     }

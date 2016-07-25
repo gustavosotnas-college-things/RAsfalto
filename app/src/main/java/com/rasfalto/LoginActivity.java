@@ -17,6 +17,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener listener;
+    boolean sucess = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +63,8 @@ public class LoginActivity extends AppCompatActivity {
         String mEmail = etEmail.getText().toString();
         String mPass = etPassword.getText().toString();
 
+        AccountController.loginAccount(mEmail,mPass,mAuth,LoginActivity.this);
+
         if(isLoginValid(mEmail, mPass)){
 
             boolean success = AccountController.loginAccount(mEmail, mPass, mAuth, LoginActivity.this);
@@ -70,11 +73,12 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(this, R.string.account_login_success, Toast.LENGTH_SHORT).show();
                 Intent loginActivity = new Intent(this, RAsfaltoActivity.class);
                 startActivity(loginActivity);
+                finish();
             }
             else {
                 Toast.makeText(this, R.string.account_login_failure, Toast.LENGTH_SHORT).show();
-                Intent voltaParaTelaInicial = new Intent(this, StartActivity.class);
-                startActivity(voltaParaTelaInicial);
+                //Intent voltaParaTelaInicial = new Intent(this, StartActivity.class);
+                //startActivity(voltaParaTelaInicial);
             }
 
         }
@@ -84,6 +88,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private boolean isLoginValid(String email, String password) {
-        return ((email != "")||(email != null))||((password != "")||(password != null));
+        return ((email != "")||(email != null))||((password != "")||(password != null)||(password.length() < 6));
     }
 }
