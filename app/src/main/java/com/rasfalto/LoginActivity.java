@@ -11,17 +11,22 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.rasfalto.service.LoginService;
 
 public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener listener;
-    boolean sucess = true;
+    private EditText etEmail;
+    private EditText etPass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        etEmail = (EditText) findViewById(R.id.emailLogin);
+        etPass = (EditText) findViewById(R.id.passwordLogin);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -39,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         };
+
     }
 
     @Override
@@ -57,36 +63,11 @@ public class LoginActivity extends AppCompatActivity {
 
     public void onClick$signIn(View view) {
 
-        EditText etEmail = (EditText) findViewById(R.id.emailLogin);
-        EditText etPassword = (EditText) findViewById(R.id.passwordLogin);
         String mEmail = etEmail.getText().toString();
-        String mPass = etPassword.getText().toString();
+        String mPass = etPass.getText().toString();
 
-        /*AccountController.loginAccount(mEmail,mPass,mAuth,LoginActivity.this);
-
-        if(isLoginValid(mEmail, mPass)){
-
-            boolean success = AccountController.loginAccount(mEmail, mPass, mAuth, LoginActivity.this);
-
-            if (success) {
-                Toast.makeText(this, R.string.account_login_success, Toast.LENGTH_SHORT).show();
-                Intent loginActivity = new Intent(this, RAsfaltoActivity.class);
-                startActivity(loginActivity);
-                finish();
-            }
-            else {
-                Toast.makeText(this, R.string.account_login_failure, Toast.LENGTH_SHORT).show();
-                //Intent voltaParaTelaInicial = new Intent(this, StartActivity.class);
-                //startActivity(voltaParaTelaInicial);
-            }
-
-        }
-        else {
-            Toast.makeText(this, R.string.account_login_empty, Toast.LENGTH_SHORT).show();
-        }*/
+        LoginService.loginAccount(mEmail, mPass, mAuth, this);
     }
 
-    private boolean isLoginValid(String email, String password) {
-        return ((email != "")||(email != null))||((password != "")||(password != null)||(password.length() < 6));
-    }
+
 }

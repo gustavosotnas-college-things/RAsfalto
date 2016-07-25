@@ -68,14 +68,4 @@ public class CreateAccountActivity extends AppCompatActivity {
         AccountService.createAccount(mEmail,mPass,mAuth,this);
     }
 
-    /**
-     * Função executada quando o usuário cria uma conta com sucesso.
-     */
-    public static void onAccountSuccess(CreateAccountActivity activity) {
-
-        Intent backToStartActivity = new Intent(activity, StartActivity.class);
-        activity.startActivity(backToStartActivity);
-        activity.finish();
-    }
-
 }
