@@ -24,6 +24,7 @@ public class AccountService {
 
                 if (task.isSuccessful()) {
                     Toast.makeText(activity, R.string.toast_new_account_success, Toast.LENGTH_SHORT).show();// retorna true se a conta foi criada com sucesso, false caso contrário.
+                    CreateAccountActivity.onAccountSuccess(activity);
                 } else {
                     Toast.makeText(activity, R.string.toast_new_account_failure, Toast.LENGTH_SHORT).show();
                 }
