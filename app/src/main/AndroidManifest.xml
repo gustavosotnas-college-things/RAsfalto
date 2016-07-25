@@ -22,6 +22,7 @@
         <activity android:name=".CreateAccountActivity" android:parentActivityName=".StartActivity"/>
         <activity android:name=".RAsfaltoActivity" />
         <activity android:name=".ChooseLoginActivity" android:parentActivityName=".StartActivity"/>
+        <activity android:name=".BuracoActivity"/>
     </application>
 
 </manifest>
