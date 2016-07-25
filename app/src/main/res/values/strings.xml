@@ -23,4 +23,6 @@
     <string name="account_login_success">Autenticação valida</string>
     <string name="account_login_failure">Usuário inexistente</string>
     <string name="account_login_empty">Preencha os campos para continuar.</string>
+
+    <string name="buracos_reportados">Buracos reportados</string>
 </resources>
