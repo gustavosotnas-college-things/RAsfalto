@@ -23,7 +23,7 @@ public class CreateAccountActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.create_account);
+        setContentView(R.layout.activity_create_account);
 
         mAuth = FirebaseAuth.getInstance();
 
