@@ -1,6 +1,5 @@
 package com.rasfalto;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -9,21 +8,28 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.rasfalto.controller.AccountController;
+import com.rasfalto.service.AccountService;
 
 public class CreateAccountActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener listener;
-    boolean success = true;
+    private EditText etEmail;
+    private EditText etPassword;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
+
+        etEmail = (EditText) findViewById(R.id.email_cadastro);
+        etPassword = (EditText) findViewById(R.id.senha_cadastro);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -59,22 +65,10 @@ public class CreateAccountActivity extends AppCompatActivity {
 
     public void onClick$signUp(View view) {
 
-        EditText etEmail = (EditText) findViewById(R.id.email_cadastro);
-        EditText etPassword = (EditText) findViewById(R.id.senha_cadastro);
         String mEmail = etEmail.getText().toString();
         String mPass = etPassword.getText().toString();
 
-        AccountController.createAccount(mEmail, mPass, mAuth, CreateAccountActivity.this);
-
-        if (success) {
-            Toast.makeText(this, R.string.toast_new_account_success, Toast.LENGTH_SHORT).show();
-
-            Intent voltarATelaInicial = new Intent(this, StartActivity.class);
-            startActivity(voltarATelaInicial);
-            finish();
-        }
-        else {
-            Toast.makeText(this, R.string.toast_new_account_failure, Toast.LENGTH_SHORT).show();
-        }
+        AccountService.createAccount(mEmail,mPass,mAuth,this);
     }
+
 }

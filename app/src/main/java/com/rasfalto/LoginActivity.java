@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.rasfalto.controller.AccountController;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -63,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
         String mEmail = etEmail.getText().toString();
         String mPass = etPassword.getText().toString();
 
-        AccountController.loginAccount(mEmail,mPass,mAuth,LoginActivity.this);
+        /*AccountController.loginAccount(mEmail,mPass,mAuth,LoginActivity.this);
 
         if(isLoginValid(mEmail, mPass)){
 
@@ -84,7 +83,7 @@ public class LoginActivity extends AppCompatActivity {
         }
         else {
             Toast.makeText(this, R.string.account_login_empty, Toast.LENGTH_SHORT).show();
-        }
+        }*/
     }
 
     private boolean isLoginValid(String email, String password) {

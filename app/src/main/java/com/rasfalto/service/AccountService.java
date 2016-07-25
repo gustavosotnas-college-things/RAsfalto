@@ -2,24 +2,32 @@ package com.rasfalto.service;
 
 import android.support.annotation.NonNull;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
-import com.rasfalto.controller.AccountController;
+import com.google.firebase.auth.FirebaseAuth;
+import com.rasfalto.CreateAccountActivity;
+import com.rasfalto.R;
 
-/**
- * Classe que comunica com o Firebase para criar uma nova conta.
- *
- * @author gustavosotnas
- */
-public class AccountService implements OnCompleteListener<AuthResult> {
+public class AccountService {
 
-    @Override
-    public void onComplete(@NonNull Task<AuthResult> task) {
+    public static void createAccount(String email, String password, FirebaseAuth mAuth,final CreateAccountActivity activity) {
 
-        Log.d("sucesso", "createUserWithEmail:onComplete:" + task.isSuccessful());
+        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(activity, new OnCompleteListener<AuthResult>() {
 
-        AccountController.setResultCreate(task.isSuccessful()); // retorna true se a conta foi criada com sucesso, false caso contrário.
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+
+                Log.d("sucesso", "createUserWithEmail:onComplete:" + task.isSuccessful());
+
+                if (task.isSuccessful()) {
+                    Toast.makeText(activity, R.string.toast_new_account_success, Toast.LENGTH_SHORT).show();// retorna true se a conta foi criada com sucesso, false caso contrário.
+                } else {
+                    Toast.makeText(activity, R.string.toast_new_account_failure, Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 }
