@@ -6,6 +6,7 @@
     <string name="user_birthdate">Data de nascimento</string>
     <string name="user_email">Endereço de e-mail</string>
     <string name="user_password">Senha de 6+ caracteres</string>
+    <string name="password">Senha</string>
     <string name="user_phone">Número de telefone</string>
     <string name="user_gender">Sexo</string>
     <string name="gender_male">Masculino</string>
